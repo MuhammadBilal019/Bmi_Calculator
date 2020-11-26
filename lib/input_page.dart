@@ -149,5 +149,25 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
+class RoundIcon extends StatelessWidget {
+  RoundIcon({@required this.iconData,this.onPress});
+  final IconData iconData;
+  final Function onPress;
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      child: Icon(iconData),
+      onPressed: onPress,
+      elevation: 6.0,
+      constraints: BoxConstraints.tightFor(
+        height: 56.0,
+        width: 56.0,
+      ),
+
+    );
+  }
+}
+
+
 
 
