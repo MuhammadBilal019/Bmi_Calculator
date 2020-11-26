@@ -1,10 +1,10 @@
+import 'package:bmi_calculator/ConstantFile.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'ContainerFile.dart';
 import 'IconTextFile.dart';
+import 'ConstantFile.dart';
 
-const activecolor= Color(0xFF1D1E33);
-const deactivecolor= Color(0xFF111328);
 enum Gender
 {
   male,
@@ -61,11 +61,15 @@ class _InputPageState extends State<InputPage> {
           ]),
         ),
         Expanded(
-          child: Container(
-            margin: EdgeInsets.all(15.0),
-            decoration: BoxDecoration(
-              color: Color(0xFF1D1E33),
-              borderRadius: BorderRadius.circular(10.0),
+          child: new RepeatContainerCode(
+            colors: Color(0xFF1D1E33),
+            cardWidget: Column(
+              children: <Widget>[
+                Text(
+                  'HEIGHT',
+                  style: KLabelStyle,
+                ),
+              ],
             ),
           ),
         ),
