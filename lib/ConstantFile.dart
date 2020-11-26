@@ -6,3 +6,7 @@ const KLabelStyle=TextStyle(
 fontSize: 30.0,
 color: Color(0xFF8D8E98),
 );
+const KNumberStyle=TextStyle(
+fontSize: 50.0,
+fontWeight: FontWeight.w900,
+);

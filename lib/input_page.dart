@@ -19,6 +19,7 @@ Color femalecolor= deactivecolor;
 class _InputPageState extends State<InputPage> {
 
   Gender selectGender;
+  int SliderHeight=180;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,10 +65,37 @@ class _InputPageState extends State<InputPage> {
           child: new RepeatContainerCode(
             colors: Color(0xFF1D1E33),
             cardWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
                   'HEIGHT',
                   style: KLabelStyle,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      SliderHeight.toString(),
+                      style: KNumberStyle,
+                    ),
+                    Text(
+                      'cm',
+                      style: KLabelStyle,
+                    ),
+                  ],
+                ),
+                Slider(
+                  value: SliderHeight.toDouble(),
+                  min: 120,
+                  max: 220,
+                  activeColor: Color(0xFFEB1555),
+                  inactiveColor: Color(0xFF8D8E98),
+                  onChanged: (double newvalue)
+                    {
+                      setState(() {
+                        SliderHeight=newvalue.round();
+                      });
+                    },
                 ),
               ],
             ),
@@ -76,20 +104,28 @@ class _InputPageState extends State<InputPage> {
         Expanded(
           child: Row(children: <Widget>[
             Expanded(
-              child: Container(
-                margin: EdgeInsets.all(15.0),
-                decoration: BoxDecoration(
-                  color: Color(0xFF1D1E33),
-                  borderRadius: BorderRadius.circular(10.0),
+              child: new RepeatContainerCode(
+                colors: Color(0xFF1D1E33),
+                cardWidget: Column(
+                  children: <Widget>[
+                    Text(
+                      'HEIGHT',
+                      style: KLabelStyle,
+                    ),
+                  ],
                 ),
               ),
             ),
             Expanded(
-              child: Container(
-                margin: EdgeInsets.all(15.0),
-                decoration: BoxDecoration(
-                  color: Color(0xFF1D1E33),
-                  borderRadius: BorderRadius.circular(10.0),
+              child: new RepeatContainerCode(
+                colors: Color(0xFF1D1E33),
+                cardWidget: Column(
+                  children: <Widget>[
+                    Text(
+                      'HEIGHT',
+                      style: KLabelStyle,
+                    ),
+                  ],
                 ),
               ),
             ),
