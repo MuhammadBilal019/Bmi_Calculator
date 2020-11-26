@@ -20,6 +20,8 @@ class _InputPageState extends State<InputPage> {
 
   Gender selectGender;
   int SliderHeight=180;
+  int SliderWeight=60;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,10 +109,21 @@ class _InputPageState extends State<InputPage> {
               child: new RepeatContainerCode(
                 colors: Color(0xFF1D1E33),
                 cardWidget: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      'HEIGHT',
+                      'WEIGHT',
                       style: KLabelStyle,
+                    ),
+                    Text(
+                      SliderWeight.toString(),
+                      style: KNumberStyle,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+
+                      ],
                     ),
                   ],
                 ),
